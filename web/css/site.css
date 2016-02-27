@@ -18,3 +18,7 @@ html {
     background-color: #fff;
     padding: 2em;
 }
+.hello {
+    padding-bottom: 1em;
+    border-bottom: 1px solid #333;
+}

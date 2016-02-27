@@ -2,7 +2,8 @@
 
 return [
     'ws' => [
-    	'login' => '',
-    	'password' => ''
+    	'login' => 'takemetows',
+    	'password' => 'takemetows',
+    	'domain' => 'takemetowebsupport.sk'
     ]
 ];

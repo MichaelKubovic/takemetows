@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'List of zones';
+$this->title = 'WS DNS records';
 
 ?>
-<p>Hello Websupport! Pick a domain from the list below:</p>
+<p class="hello">Hello Websupport! Below are all DNS records for <b><?php echo Yii::$app->params['ws']['domain'] ?></b></p>
