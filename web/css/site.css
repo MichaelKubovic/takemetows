@@ -22,3 +22,67 @@ html {
     padding-bottom: 1em;
     border-bottom: 1px solid #333;
 }
+.btn-right {
+    float: right;
+}
+.table {
+    width: 100%;
+}
+.btn,
+.pagination a {
+    display: inline-block;
+    height: 26px;
+    line-height: 24px;
+    border-radius: 3px;
+    border: 1px solid #333;
+    padding: 0 10px;
+    color: #333;
+    text-decoration: none;
+}
+.btn-green {
+    background: #579d1c;
+    color: #fff;
+    border: 0;
+}
+
+.control-label {
+    display: block;
+    width: 120px;
+    float: left;
+}
+.form-control {
+    height: 25px;
+    float: left;
+}
+.form-group {
+    margin-bottom: 5px;
+    clear: both;
+    overflow: hidden;
+}
+.btn-save {
+    background: #3a87ad;
+    color: #fff;
+    border: 0;
+    margin-left: 120px;
+}
+.error-summary,
+.help-block {
+    color: #b94a48;
+}
+.help-block {
+    float: left;
+    margin-left: 10px;
+    line-height: 25px;
+    font-size: 0.8em;
+}
+.pagination {
+    list-style: none;
+    padding: 0;
+    padding-top: 1em;
+    border-top: 1px solid #333;
+    overflow: hidden;
+}
+.pagination li {
+    display: inline-block;
+    margin-right: 10px;
+}

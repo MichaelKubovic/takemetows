@@ -1,5 +1,4 @@
 <?php
-
 namespace app\controllers;
 
 use yii\web\Controller;
@@ -13,10 +12,5 @@ class SiteController extends Controller
                 'class' => 'yii\web\ErrorAction',
             ]
         ];
-    }
-
-    public function actionIndex()
-    {
-        return $this->render('index');
     }
 }

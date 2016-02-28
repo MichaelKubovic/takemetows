@@ -1,5 +1,4 @@
 <?php
-
 $params = require(__DIR__ . '/params.php');
 
 $config = [
@@ -38,16 +37,20 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-        /*
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
+        
+       'wsClient' => [
+            'class' => 'app\components\ws\Api',
+       ],
     ],
     'params' => $params,
+    'defaultRoute' => 'record'
 ];
 
 if (YII_ENV_DEV) {
