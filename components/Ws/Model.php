@@ -7,6 +7,8 @@ use yii\base\InvalidConfigException;
 
 /**
  * Model communicating over REST
+ *
+ * @todo refactor creating of nested resources into ResourceFactory
  */
 class Model extends YiiModel
 {
@@ -85,6 +87,14 @@ class Model extends YiiModel
 		return $items;
 	}
 
+	public function findOneNested($parentResource, $nestedResource, $nestedClassName, $nestedId)
+	{
+		$response = self::api()->request('GET', $this->getResourceEndpoint() . '/' . $nestedResource . '/' . $nestedId);
+		$item = new $nestedClassName($response);
+		$item->setParentResource([$parentResource => $this]);
+		return $item;
+	}
+
 	public function save()
 	{
 		if (empty($this->id)) {
@@ -112,5 +122,16 @@ class Model extends YiiModel
         return new static($response['item']);
 
         return $this;
+	}
+
+	public function delete()
+	{
+		$response = self::api()->request('DELETE', $this->getResourceEndpoint());
+		if ($response['status'] === 'error') {
+			$this->addErrors($response['errors']);
+            return false;
+		}
+
+		return true;
 	}
 }

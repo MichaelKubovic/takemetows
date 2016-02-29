@@ -44,6 +44,11 @@ html {
     color: #fff;
     border: 0;
 }
+.btn-red {
+    background: #b94a48;
+    color: #fff;
+    border: 0;
+}
 
 .control-label {
     display: block;

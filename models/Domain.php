@@ -28,4 +28,9 @@ class Domain extends Model
 
 		return $this->records;
 	}
+
+	public function getRecord($id)
+	{
+		return $this->findOneNested('zone', 'record', 'app\models\Record', $id);
+	}
 }

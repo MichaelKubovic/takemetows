@@ -1,5 +1,6 @@
 <?php
 use yii\grid\GridView;
+use yii\grid\ActionColumn;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
@@ -17,7 +18,18 @@ echo GridView::widget([
         'type',
         'name',
         'content',
-        'ttl'
+        'ttl',
+
+        [
+        	'class' => ActionColumn::className(),
+        	// 'template' => '{delete}',
+        	'buttons' => [
+        		'delete' => function($url, $model, $key) use ($domainName) {
+        			$url .= '&domain=' . $domainName;
+        			return "<a href='$url' class='btn btn-red'>Delete</a>";
+        		}
+        	]
+        ]
     ],
 ]);
 ?>
