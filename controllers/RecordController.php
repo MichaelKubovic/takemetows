@@ -32,8 +32,13 @@ class RecordController extends Controller
 
         $domain = Domain::findOne($domainName);
 
+        /**
+         * this ugliness could be also masked as $domain->createRecord()
+         * @todo refactor to resource factory
+         */
         $record = new Record();
         $record->setParentResource(['zone' => $domain]);
+
 
         $errors = [];
         if ($record->load(Yii::$app->request->post()) && $record->validate()) {
@@ -41,7 +46,7 @@ class RecordController extends Controller
 
             if ($result) {
                 /**
-                 * @todo  set success session
+                 * @todo  set success session message
                  */
                 $this->redirect('index');
             }
